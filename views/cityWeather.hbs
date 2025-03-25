@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/cityWeather.css">
+    <title>{{weather.name}}</title>
+  </head>
+  <body>
+    <div class="container">
+<h1>{{weather.name}}</h1>
+<img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="weather icon">
+<p>{{description}}</p>
+<p>Temperature: {{weather.main.temp}}°C</p>
+<p>Presssure: {{weather.main.pressure}}hPa</p>
+<p>Wind: {{weather.wind.speed}}m/s</p>
+<p>Humidity: {{weather.main.humidity}}%</p>
+
+<a href="/">Back to list</a>
+    </div>
+    
+  </body>
+</html>
