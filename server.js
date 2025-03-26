@@ -15,20 +15,8 @@ app.use(express.static("public"));
 
 let cities = ["Zhytomyr", "Kyiv", "Lviv", "Odesa", "Dnipro"];
 
-app.post("/addCity", (req, res) => {
-  const newCity = req.body.city;
-  if (newCity && !cities.includes(newCity)) {
-    cities.unshift(newCity);
-  }
-  res.status(200).end();
-});
-
 app.get("/", (req, res) => {
   res.render("index", { cities });
-});
-
-app.listen(PORT, () => {
-  console.log(`Server: http://localhost:${PORT}`);
 });
 
 // маршрут /weather/:city
@@ -63,4 +51,8 @@ app.get("/weather", async (req, res) => {
   } catch (error) {
     res.status(404).send("City is not found");
   }
+});
+
+app.listen(PORT, () => {
+  console.log(`Server: http://localhost:${PORT}`);
 });
